@@ -1,0 +1,66 @@
+/* ---------------------------------------------------------------------- */
+/* BASE PAGE STYLES ----------------------------------------------------- */
+/* ---------------------------------------------------------------------- */
+// used to be global.scss
+
+* {
+    @include box-sizing( border-box );
+}
+
+@-ms-viewport {width: device-width;}
+@-o-viewport {width: device-width;}
+
+html {
+    overflow-y:auto;
+}
+
+body {
+    background: $white;
+    margin: 0;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    // The font-smoothing property fixes ugly font rendering in Chrome and provides for similar rendering on OSX as seen in Safari and Chrome. May be fixed in future. Watch this space. https://code.google.com/p/chromium/issues/detail?id=152304
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video,
+audio {
+    max-width: 100%;
+    height: auto;
+}
+
+// TODO eholladay 121814 main is block-level by default so this is unnecessary but confirm it was not a bugfix before removing
+// main {
+//     display: block;
+// }
+
+// TODO eholladay 121814 this should probably go with iconography styles
+// .icon {
+//     display: inline-block;
+//     vertical-align: top;
+//     font-style: normal;
+// }
+
+
+// LINK STYLES ---------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+a {
+    color: $blue;
+    text-decoration: none;
+}
+
+a img {
+    border: 0; // Remove borders in IE8
+}
+
+// CUSTOM HR ------------------------------------------------------------ //
+// ---------------------------------------------------------------------- //
+
+hr {
+    border-top: 1px solid $beige;
+    border-bottom: 0;
+    margin-bottom: 1.5em;
+}

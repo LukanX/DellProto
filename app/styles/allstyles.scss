@@ -1,0 +1,5 @@
+
+@import "compass/utilities/sprites/base";
+$view-sprite: sprite-map("styleguide/*.png", $spacing: 2px);
+
+@import 'roux';

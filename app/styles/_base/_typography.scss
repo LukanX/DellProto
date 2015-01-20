@@ -1,0 +1,252 @@
+// ------------------------------------------------------------------------ //
+// TYPOGRAPHY ------------------------------------------------------------- //
+// ------------------------------------------------------------------------ //
+// This file defines variables for and the use of typography styles,
+// font-families, sizes, extends, and resets.
+
+
+
+
+
+// FONT FAMILY VARIABLES -------------------------------------------------- //
+// ------------------------------------------------------------------------ //
+// Whereas the font-face includes are defined first in webfonts.scss,
+// here is where we declare the font stacks in use, including fallbacks.
+// Usage: h1 { font-family: $headline-font; }
+
+
+$headline-font: Georgia, "Times New Roman", serif; //"Adelle", Georgia, "Times New Roman", serif;
+$body-font:     "Helvetica Neue", sans-serif;
+$mono-font:     monospace;
+
+
+// TODO eholladay 010515 remove these and put them in roux app styles
+.font-serif {
+    font-family: $headline-font;
+    font-weight: 100;
+}
+
+.font-sans {
+    font-family: $body-font;
+    font-weight: normal;
+}
+
+.font-mono {
+    font-family: $mono-font;
+}
+
+// LINE HEIGHTS ----------------------------------------------------------- //
+// ------------------------------------------------------------------------ //
+
+$line-base:  1.6  !default; // approximately 14px
+$line-large: 1.75 !default;
+$line-small: 1.1  !default;
+
+
+
+// POLYFILL ------------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+$body-text                : $body-text-color;
+$serif                    : $headline-font;
+$sans-serif               : $body-font;
+$mono                     : $mono-font;
+
+
+
+// FONT SIZES ------------------------------------------------------------- //
+// ------------------------------------------------------------------------ //
+
+//  breakpoint  | 0px            | 500px         | 800px        | 1000px     |
+//  h1          | 28px epsilon   | 36px gamma    | 44px beta    | 65px alpha |
+//  h2          | 28px epsilon   | 36px gamma    | 44px beta    |   →        |
+//  h3          | 24px iota      | 28px epsilon  | 36px gamma   |   →        |
+//  h4          | 20px kappa     | 26px zeta     | 32px delta   |   →        |
+//  h5          | 20px kappa     |   →           | 24px iota    |   →        |
+//  h6          | 20px kappa     |   →           |   →          |            |
+//  small       | 12px omega     |   →           |   →          |   →        |
+//  p, base     | 15px sigma     |   →           |   →          |            |
+
+
+
+// FONT SIZE VARIABLES ---------------------------------------------------- //
+// these are unitless so they can be used in the em/px conversion functions
+// but they are actually the em values.
+
+$alpha:   65px;
+$beta:    44px;
+$gamma:   36px;
+$delta:   32px;
+$epsilon: 28px;
+$zeta:    26px;
+$iota:    24px;
+$kappa:   20px;
+$sigma:   15px;
+$omega:   12px;
+
+
+@mixin h1 {
+    line-height: 1.15em;
+    margin-bottom: 0;
+    font-size: $epsilon;
+    font-weight: 100;
+
+    @include media($breakpoint-500)  { font-size: $gamma; }
+    @include media($breakpoint-800)  { font-size: $beta; }
+    @include media($breakpoint-1000) { font-size: $alpha; }
+}
+
+@mixin h2 {
+    line-height: 1.227em;
+    margin-bottom: 0;
+    font-size: $gamma;
+
+    @include media($breakpoint-500) { font-size: $gamma; }
+    @include media($breakpoint-800) { font-size: $beta; }
+}
+
+@mixin h3 {
+    margin-bottom: 0.5em;
+    line-height: 1.15em;
+    font-size: $epsilon;
+
+    @include media($breakpoint-500) { font-size: $epsilon; }
+    @include media($breakpoint-800) { font-size: $gamma; }
+}
+
+@mixin h4 {
+    line-height: 1.15em;
+    margin-bottom: 0.5em;
+    font-size: $zeta;
+
+    @include media($breakpoint-500) { font-size: $zeta; }
+    @include media($breakpoint-800) { font-size: $delta; }
+}
+
+@mixin h5 {
+    line-height: 1.15em;
+    margin-bottom: 0.5em;
+    font-size: $iota;
+
+    @include media($breakpoint-800) { font-size: $iota; }
+}
+
+@mixin h6 {
+    margin-bottom: 0.5em;
+    font-size: $sigma;
+}
+
+
+
+// BODY TYPE STYLES ----------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+body {
+    font-size: $sigma;
+    line-height: $line-base;
+    font-family: $body-font;
+    font-weight: 400;
+    color: $body-text-color;
+
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+
+    // TODO: The following fixes bad font rendering in Chrome. May be fixed in future.
+    //      Watch this space. https: //code.google.com/p/chromium/issues/detail?id=152304 */
+    // TODO: provides for similar rendering on OSX as seen in Safari and Chrome */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+// HEADER CLASSES ------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: $headline-font;
+    font-weight: 100;
+    line-height: $line-small;
+    margin-top: 0;
+    color: $headline-text-color;
+
+    // TODO eholladay 121814 can we remove this? is this used?
+    small {
+        font-family: $sans-serif;
+        font-weight: 400;
+        font-size: 60%; // TODO should this always be a scaled proportion to the header size, or should it be a fixed pixel size?
+        color: $beige;
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+
+
+.h1 { @include h1; }
+.h2 { @include h2; }
+.h3 { @include h3; }
+.h4 { @include h4; }
+.h5 { @include h5; }
+.h6 { @include h6; }
+
+
+
+.h-inline {
+    display: inline-block;
+    margin-top: 0;
+}
+
+
+.page-header {
+    border: 1px solid $beige;
+    background: $light-beige;
+    padding: 0 1em;
+    margin-bottom: 2em;
+
+    .title{
+        @include h2;
+    }
+}
+
+
+small {
+    font-size: $omega;
+}
+
+strong {
+    font-weight: 600;
+}
+
+ul, ol, p {
+    margin: 0 0 1.5em;
+}
+
+// By default remove styles from basic list elements
+ul, ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul.list-padded li {
+    margin: 0 0 1.5em;
+}
+
+
+
+
+

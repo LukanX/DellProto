@@ -1,0 +1,49 @@
+// Zero Padding
+.p0  {  padding: 0; }
+.pt0 { padding-top: 0; }
+.pr0 { padding-right: 0; }
+.pb0 { padding-bottom: 0; }
+.pl0 { padding-left: 0; }
+
+
+//Padding as one unit of default spacing
+.p1  { padding: $spacing-default; }
+.pt1 { padding-top: $spacing-default; }
+.pr1 { padding-right: $spacing-default; }
+.pb1 { padding-bottom: $spacing-default; }
+.pl1 { padding-left: $spacing-default; }
+
+//Padding as 2 units of default spacing
+.p2  { padding: $spacing-default*2; }
+.pt2 { padding-top: $spacing-default*2; }
+.pr2 { padding-right: $spacing-default*2; }
+.pb2 { padding-bottom: $spacing-default*2; }
+.pl2 { padding-left: $spacing-default*2; }
+
+// Zero Margin
+.m0  { margin: 0; }
+.mt0 { margin-top: 0; }
+.mr0 { margin-right: 0; }
+.mb0 { margin-bottom: 0; }
+.ml0 { margin-left: 0; }
+
+// One Margin
+.m1  { margin: $spacing-default; }
+.mt1 { margin-top: $spacing-default; }
+.mr1 { margin-right: $spacing-default; }
+.mb1 { margin-bottom: $spacing-default; }
+.ml1 { margin-left: $spacing-default; }
+
+// Zero Margin
+.m2  { margin: $spacing-default*2; }
+.mt2 { margin-top: $spacing-default*2; }
+.mr2 { margin-right: $spacing-default*2; }
+.mb2 { margin-bottom: $spacing-default*2; }
+.ml2 { margin-left: $spacing-default*2; }
+
+//Module hacks
+.module{
+	&.p0  {  padding: 0; }
+	&.pt0 { padding-top: 0; }
+	&.pb0 { padding-bottom: 0; }
+}

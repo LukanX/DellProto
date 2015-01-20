@@ -1,0 +1,65 @@
+// ---------------------------------------------------------------------- //
+// MEDIAQUERY BREAKPOINTS ----------------------------------------------- //
+// ---------------------------------------------------------------------- //
+// This file declares the breakpoints in use for RMN.
+// Most of them are min-width (mobile first) but occasionally there are
+// max-width breakpoints (see max-width section for use.)
+
+
+// MIN-WIDTH BREAKPOINTS ------------------------------------------------ //
+// ---------------------------------------------------------------------- //
+
+// $breakpoint-320: new-breakpoint(min-width 321px); // to hit 320px phones
+$breakpoint-320: (min-width 321px); // to hit 320px phones
+
+// $breakpoint-500: new-breakpoint(min-width 500px);
+$breakpoint-500: (min-width 500px);
+
+// $breakpoint-540: new-breakpoint(min-width 540px);
+$breakpoint-540: (min-width 540px);
+
+// $breakpoint-600: new-breakpoint(min-width 600px);
+$breakpoint-600: (min-width 600px);
+
+// $breakpoint-680: new-breakpoint(min-width 680px);
+$breakpoint-680: (min-width 680px);
+
+// $breakpoint-768: new-breakpoint(min-width 768px);
+$breakpoint-768: (min-width 768px);
+
+// $breakpoint-800: new-breakpoint(min-width 800px);
+$breakpoint-800: (min-width 800px);
+
+// $breakpoint-900: new-breakpoint(min-width 900px);
+$breakpoint-900: (min-width 900px);
+
+// $breakpoint-1000: new-breakpoint(min-width 1000px);
+$breakpoint-1000: (min-width 1000px);
+
+// $breakpoint-1080: new-breakpoint(min-width 1080px);
+$breakpoint-1080: (min-width 1080px);
+
+// $breakpoint-1100: new-breakpoint(min-width 1100px);
+$breakpoint-1100: (min-width 1100px);
+
+
+// MAX-WIDTH BREAKPOINTS ------------------------------------------------ //
+// ---------------------------------------------------------------------- //
+
+// $breakpoint-400-max: new-breakpoint(max-width 400px);
+$breakpoint-400-max: (max-width 400px);
+
+// $breakpoint-480-max: new-breakpoint(max-width 480px);
+$breakpoint-480-max: (max-width 480px);
+
+// $breakpoint-800-max: new-breakpoint(max-width 800px);
+$breakpoint-800-max: (max-width 800px);
+
+// $breakpoint-800-1000-max: new-breakpoint(max-width 1000px min-width 800px);
+$breakpoint-800-1000-max: (max-width 1000px min-width 800px);
+
+// $breakpoint-800-900-max: new-breakpoint(max-width 900px min-width 800px);
+$breakpoint-800-900-max: (max-width 900px min-width 800px);
+
+// $breakpoint-tablet-portrait-only: new-breakpoint(max-width 799px min-width 500px);
+$breakpoint-tablet-portrait-only: (max-width 799px min-width 500px);

@@ -1,0 +1,559 @@
+@import "compass/utilities/sprites/base";
+$view-sprite: sprite-map("../images/styleguide/*.png", $spacing: 2px);
+
+
+@import "_utilities";
+@import "_mixins";
+@import "_vendor";
+@import "_base";
+@import "_atoms";
+@import "_molecules";
+@import "_organisms";
+@import "_prototype-modules";
+
+
+%rounded-top{
+  border-radius: $radius $radius 0 0;
+}
+
+%rounded-bottom{
+  border-radius: 0 0 $radius $radius;
+}
+
+.middle-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+}
+
+.small-bottom-margin{
+  margin-bottom: .5em;
+}
+
+h1,h2,h3,h4,h5,h6{
+  &.no-margin{
+    margin-bottom: 0;
+  }
+}
+
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+.hero-module{
+  padding: 4em 0;
+}
+
+.green{
+  color: $green;
+}
+
+.pricing .smaller.black{
+  color: $black;
+}
+
+.mt-percent{
+  margin-top: 3.2%;
+}
+.ng-scope.full-view{
+  height: 100%;
+  width: 100%;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.hero-container{}
+
+%absolute-center{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.hero-paragraph{
+  width: 80%;
+  font-size: 110%;
+  margin: auto;
+}
+
+.faux-link{
+  cursor: pointer;
+  color: $blue;
+  &:hover{
+    color: $darker-blue;
+  }
+}
+
+.beige-bg{
+  background-color: $light-beige;
+}
+
+.view-more{
+  font-size: 125%;
+  padding-top: 1em;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.filter-nav{
+  border-top: 1px solid $beige;
+  border-bottom: 1px solid $beige;
+  padding: 1.5em;
+  ul{
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    li{
+      display: inline-block;
+      position: relative;
+      margin-right: 1em;
+      .carrot{
+        font-size: 75%;
+        }
+      .sub-menu{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        border: 1px solid $blue;
+        z-index: 10;
+        li{
+          display: block;
+          margin-right: 0;
+          input[type="radio"]{
+            position: absolute;
+            left: -1000px;
+            & + label{
+              padding: 0;
+              display: block;
+              width: 100%;
+              height: 100%;
+              color: $blue;
+              padding: .5em 1em;
+              &:hover{
+                color: white;
+                background-color: $blue;
+                cursor: pointer;
+              }
+            }
+            &:checked + label{
+              color: white;
+              background-color: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// FAVORITING
+.favorite-heart{
+  @include sprite-dimensions($view-sprite, Heart_Red_Outline);
+  background: sprite($view-sprite, Heart_Red_Outline) no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  cursor: pointer;
+  &.active{
+    @include sprite-dimensions($view-sprite, Big_Heart_Red_Filled);
+    background: sprite($view-sprite, Big_Heart_Red_Filled) no-repeat;
+  }
+}
+
+.sale-alert{
+  @include sprite-dimensions($view-sprite, alarmclock-off);
+  background: sprite($view-sprite, alarmclock-off) no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  cursor: pointer;
+  &.active{
+    @include sprite-dimensions($view-sprite, alarmclock-on);
+    background: sprite($view-sprite, alarmclock-on) no-repeat;
+  }
+}
+
+.favorite-message{
+  width: 60%;
+  position: absolute;
+  bottom: 100%;
+  font-size: 12px;
+  left: 50%;
+  color: white;
+  left: 60%;
+  z-index: -5;
+  transition: .5s;
+  opacity: 0;
+  display: none;
+  @include media($breakpoint-800){
+    font-size: 14px;
+    display: block;
+  }
+  &.visible{
+    opacity: 1;
+    bottom: 102%;
+    z-index: 10;
+  }
+  .message-container{
+    padding: .5em;
+    background: $shadow-dark;
+    position: relative;
+    &:before{
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 15px 15px 0 15px;
+      border-color: $shadow-dark transparent transparent transparent;
+      content: "";
+      position: absolute;
+      left: 50%;
+      margin-left: -15px;
+      bottom: -15px;
+    }
+  }
+  p{
+    margin-bottom: .5em;
+    line-height: 1.2em;
+  }
+}
+
+
+// PRODUCT TILE
+.product-card{
+  margin-bottom: 3.2%;
+  position: relative;
+  .favorite-heart{
+    top: 1em;
+    right: 1em;
+  }
+  .sale-alert{
+    top: 3em;
+    right: 1em;
+  }
+  .product-photo-container{
+    width: 100%;
+    padding: 1em;
+    background-color: white;
+    @extend %rounded-top;
+    border: 1px solid $beige;
+  }
+  .product-photo{
+    width: 100%;
+    @include maintain-ratio(4 3);
+    position: relative;
+    background-size: contain;
+    background-position: center center;
+  }
+  .product-description{
+    padding: 1em 1em;
+    border: 1px solid $beige;
+    border-top: none;
+    position: relative;
+    background-color
+    : white;
+    @extend %rounded-bottom;
+    .smaller{
+      color: $gray;
+      font-size: 75%;
+    }
+    .description{
+      font-weight: bold;
+      line-height: 1.2em;
+      padding: .25em 0;
+      height: 72px;
+      font-size: 12px;
+      overflow: hidden;
+      @include media($breakpoint-500) { font-size: 14px;}
+    }
+    .reviews{
+      padding-top: 4px;
+      @include media($breakpoint-500) { float: left; width: 40%;}
+    }
+    .price-reviews{
+      padding-top: .25em;
+    }
+    .expiration-price{
+      @include media($breakpoint-500) { float: left; width: 60%;}
+    }
+    .discount{
+      color: $green;
+      font-size: 80%;
+    }
+    .price{
+      font-weight: bold;
+      font-size: 110%;
+      color: $green;
+    }
+    .expiration-price{
+      padding-bottom: .5em;
+      @include media($breakpoint-500){ text-align: right; }
+    }
+  }
+}
+
+// CATEGORIES
+
+.view-more{
+  width: 100%;
+}
+
+.collection-container{
+  width: 100%;
+}
+
+.collection-name{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: $blue;
+  font-family: $serif;
+  font-size: 14px;
+  width: 100%;
+  text-align: center;
+  @include media($breakpoint-500){ font-size: 22px;}
+}
+.collection{
+  width: 100%;
+  @include maintain-ratio(16 9);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  border-radius: $radius;
+  
+}
+
+// PRODUCT PAGE
+
+.product-highlights{
+  .button{
+    min-width: 175px;
+    margin-top: 1em;
+  }
+  .merchant-logo-container{
+    float:left;
+    width: 20%;
+    @include media($breakpoint-800){
+      width: 8%;
+    }
+  }
+  .price-calculation{
+    float: left;
+    width: 80%;
+    padding-left: 1em;
+    .old-price-coupons{
+      line-height: 1em;
+    }
+    @include media($breakpoint-800){
+      width: 92%;
+    }
+  }
+}
+
+.price-compare{
+  padding: 0;
+  margin: 0;
+  li{
+    padding: .5em;
+    border-bottom: 1px solid $beige;
+    width: 100%;
+    &:first-child{
+      border-top: 1px solid $beige;
+    }
+    .merchant-info{
+      width: 70%;
+      float: left;
+      .merchant-logo-container{
+        width: 30%;
+        float: left;
+      }
+      .merchant-coupon-details{
+        width: 70%;
+        float: left;
+        padding-left: 1em;
+        padding-right: 1em;
+        .smaller{
+          line-height: 1.2em;
+        }
+      }
+    }
+    .purchase-price{
+      width: 30%;
+      text-align: right;
+      float: left;
+      text-align: center;
+      .price{
+        width: 100%;
+      }
+      .smaller{
+        padding-bottom: .5em;
+      }
+    }
+    @include media($breakpoint-800){
+      .merchant-info{
+        width: 80%;
+        .merchant-logo-container{
+          width: 10%;
+        }
+        .merchant-coupon-details{
+          width: 90%;
+          padding-left: 1em;
+          padding-top: 1.5em;
+        }
+      }
+      .purchase-price{
+        width: 20%;
+        text-align: right;
+        padding-top: 1.5em;
+        float: left;
+        .smaller{
+          padding-bottom: 0;
+        }
+        .price{
+          width: 60%;
+          float: left;
+        }
+      }
+    }
+  }
+}
+
+// Homepage Merchant Logos
+
+.top-deal-homepage{
+  .top{
+    @extend %rounded-top;
+    border-bottom: none;
+  }
+  .bottom{
+    @extend %rounded-bottom;
+    background: $shadow-medium;
+    color: white;
+    padding: .5em .25em;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.2em;
+    @include media($breakpoint-800){
+      font-size: 14px;
+    }
+  }
+}
+
+// Store Page Stuff
+.storepage{
+  background: #f1f1f1;
+  position: relative;
+  img{
+    display: block;
+    width: 787px;
+    margin: auto;
+  }
+  .waypoint{
+    width: 100%;
+    z-index: 10;
+    height: 60px;
+    //background: red;
+    position: absolute;
+    top: 1200px;
+    left: 0;
+  }
+  .popup{
+    background: $light-beige;
+    padding: 2em;
+    width: 100%;
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    border-top: 1px solid $beige;
+    transition: .5s;
+    .container{
+      position: relative;
+      .x-out{
+        position: absolute;
+        font-size: 24px;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+      }
+    }
+    &.poppedUp{
+      bottom: 0;
+    }
+  }
+}
+
+.collection{
+  border: 1px solid $beige;
+  border-radius: $radius;
+  // position: relative;
+}
+
+.collection-contianer{
+  margin-bottom: 3.2%;
+}
+
+// TABS
+.tabs{
+  border-bottom: 1px solid $beige;
+  ul{
+    margin: 0;
+  }
+  li{
+    display: inline-block;
+    margin-bottom: -1px;
+    margin-left: .5em;
+    padding: .5em 2em;
+    @extend %rounded-top;
+    border: 1px solid $beige;
+    cursor: pointer;
+    &.active{
+      border-bottom: 1px solid white;
+      cursor: default;
+    }
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+
+}
+
+// BLOCK LINK
+.block-link{
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+
+
+
+
+

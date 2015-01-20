@@ -1,0 +1,43 @@
+// ---------------------------------------------------------------------- //
+// RETAILMENOT DEFAULT PURPLE THEME ------------------------------------- //
+// ---------------------------------------------------------------------- //
+// Top-level color variables are declared in colors.scss.
+// This file declares abstracted color variables that reference the
+// original color variables.
+
+// OVERRIDING VARIABLES ------------------------------------------------ //
+// Note that because the color variables are set to !default, you
+// _can_ override them here if necessary. The variables in this file
+// are _also_ set to !default so you can override them elsewhere
+// on a per module basis if you need to.
+
+// NEED TO ADD A NEW VARIABLE? ------------------------------------------ //
+// First, check and make sure something similar doesn't already exist.
+// Be sure to add it in a correct spot in the file & properly comment!
+
+
+// TYPOGRAPHY COLORS ---------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+$body-text-color          : $gray;
+$headline-text-color      : $black;
+
+
+// SUCCESS & ERROR MESSAGING -------------------------------------------- //
+// ---------------------------------------------------------------------- //
+// TODO: delete once login modal uses our error pattern
+
+$error-background         : #FBE7E8; // Armour TODO eholladay 112114 this seems like a redundant color
+$error-color              : $red;
+
+// TODO: where are these used?
+$success-background       : #e1f1cd; // Hint of Green
+$success-color            : #4e8736; // Sap Green
+
+
+// SOCIAL MEDIA --------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+// TODO: Scope to Facebook Button component
+$facebook-blue            : #3B5997;
+$facebook-darker-blue     : darken( $facebook-blue, 10% );
+$facebook-darkest-blue    : darken( $facebook-blue, 15% );

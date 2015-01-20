@@ -1,0 +1,47 @@
+// ---------------------------------------------------------------------- //
+// WEBFONTS ------------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+// This file imports any webfonts.
+
+// FONT-FACE MIXIN ------------------------------------------------------ //
+// ---------------------------------------------------------------------- //
+// This font-face mixin blatantly stolen from Bourbon, and came with
+// this following comment: "Order of the includes matters,
+// and it is: normal, bold, italic, bold+italic."
+
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+
+    @if $asset-pipeline == true {
+      src: font-url('#{$file-path}.eot');
+      src: font-url('#{$file-path}.eot?#iefix')          format('embedded-opentype'),
+           font-url('#{$file-path}.woff')                format('woff'),
+           font-url('#{$file-path}.ttf')                 format('truetype'),
+           font-url('#{$file-path}.svg##{$font-family}') format('svg');
+    } @else {
+      src: url('#{$file-path}.eot');
+      src: url('#{$file-path}.eot?#iefix')               format('embedded-opentype'),
+           url('#{$file-path}.woff')                     format('woff'),
+           url('#{$file-path}.ttf')                      format('truetype'),
+           url('#{$file-path}.svg##{$font-family}')      format('svg');
+    }
+  }
+}
+
+
+
+/* ---------------------------------------------------------------------- */
+/* FONTS ---------------------------------------------------------------- */
+/* ---------------------------------------------------------------------- */
+// Note that this section WILL output CSS!
+
+// Adelle  -------------------------------------------------------------- //
+// Use: TODO eholladay 112114 list usages
+@include font-face( 'Adelle', font-url( 'adelle-lining-figures/adellelf-light-webfont', true ), 100);
+
+// RMN Icon Font  -------------------------------------------------------- //
+// Use: TODO eholladay 112114 list usages
+@include font-face( 'rmn-iconfont', font-url( 'rmn-iconfont/rmn-iconfont', true ));

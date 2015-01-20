@@ -1,0 +1,26 @@
+// CLEARFIX ------------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+// To force a parent element to contain its floated children.
+// Based off http://nicolasgallagher.com/micro-clearfix-hack/
+
+// The space content is one way to avoid an Opera bug when the
+// contenteditable attribute is included anywhere else in the document.
+// Otherwise it causes space to appear at the top and bottom of elements
+// that are clearfixed.
+
+// The use of `table` rather than `block` in the display property is
+// necessary if using :before` to contain the top-margins of child elements.
+
+// Usage:
+// @extend %clearfix;
+// on the parent of N number of floated elements, to contain them.
+
+%clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}

@@ -1,0 +1,42 @@
+/* ---------------------------------------------------------------------- */
+/* HELPER: SHOW GRID ---------------------------------------------------- */
+/* ---------------------------------------------------------------------- */
+// TODO eholladay 121814 this should be in the style guide, not here.
+
+.show-grid {
+    text-align: center;
+
+    .grid-row {
+        background-color: $beige;
+        background-color: $shadow-light;
+    }
+
+    .grid-unit {
+        color: $white;
+        padding: 0 0 !important;  // Helper class specificity override
+        margin-bottom: .25em !important; // Helper class specificity override.
+        margin-top: .25em;
+        min-height: 3em !important; // Helper class specificity override.
+        line-height: 3em !important;
+        background-color: $purple !important // Helper class specificity override
+    }
+
+    .grid-unit.col-flip {
+        background-color: $red !important; // Helper class specificity override
+    }
+
+    div[class*="grid-"] {
+        border-radius: 5px;
+        margin-bottom: .5em;
+        padding: .5em 0;
+        min-height: 1.5em;
+        display: block;
+    }
+
+  .fixed {
+    background: rgba(255,0,0,0.1);
+    margin-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
+}

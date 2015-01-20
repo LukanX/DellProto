@@ -1,0 +1,103 @@
+// ---------------------------------------------------------------------- //
+// COLOR VARIABLES ------------------------------------------------------ //
+// ---------------------------------------------------------------------- //
+// All color variables are declared here. This file does not output CSS.
+// See also theme-rmn-purple for the default retailmenot.com purple theme.
+
+// NEED TO ADD A NEW VARIABLE? ------------------------------------------ //
+// First, check and make sure something similar doesn't already exist.
+// Second, check with Design/UX to see if there is something else that
+// can be re-used rather than adding an existing variable.
+// Lastly, make sure it should be a top-level color var (e.g. $white)
+// instead of a theme-level abstracted var (e.g. $button-bg-color).
+// If it is the latter, put it in one of the theme-*.scss files instead.
+// ---------------------------------------------------------------------- //
+
+// NAMING CONVENTIONS --------------------------------------------------- //
+// Variables are named generic -> specific, with the shared name first.
+
+// TIP! ----------------------------------------------------------------- //
+// If you are using Sublime Text, install the ColorHighlighter plugin
+// to be able to see the colors as you're coding! It now works with
+// Sass variables as well! Set the User pref "ha_style": "background".
+
+
+
+// PURPLE --------------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+$purple                   : #602D6C !default;
+$purple-light             : #784c82 !default;           // used to be light-purple
+$purple-dark              : #4b2354 !default;          // used to be dark-purple
+$purple-dark-10           : darken( $purple-dark, 10% ) !default; // #2b1430 used to be darker-purple
+$purple-dark-20           : darken( $purple-dark, 20% ) !default; // #0b050c used to be darkest-purple
+
+
+// BLUE ----------------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+$blue                     : #259fc4 !default;
+$blue-dark                : darken( $blue, 10% ) !default; // #1d7c99 used to be darker-blue
+
+
+// RED ------------------------------------------------------------------ //
+// ---------------------------------------------------------------------- //
+
+$red                      : #ea4545 !default;
+$red-dark                 : darken( $red, 10% ) !default; // #e21a1a used to be dark-red
+
+
+// MISC COLORS ---------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+$green                    : #10B48A !default;
+$green-dark               : darken( $green, 10% ) !default; // #0c8566 used to be darker-green
+$orange                   : #f16c3d !default; // Not in use TODO eholladay 112114 if not in use, kill it!
+$yellow                   : #e7b120 !default;
+
+
+// NEUTRALS ------------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+$off-white                : #f9f9f7 !default; // used to be lightest-beige
+$beige-light              : #efefe9 !default; // used to be light-beige
+$beige                    : #d1d0c9 !default;
+$star-dust                : #a3a195 !default; // Star Dust - come on, that's cool. used to be dark-beige
+$star-dust-dark           : darken( $star-dust, 10% ) !default; // used to be darker-beige
+
+
+// BLACK & WHITE -------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+$black                    : #222222 !default;
+$gray                     : #646464 !default; // Ironside Gray
+$white                    : #ffffff !default;
+$lightest-gray						: #ececec; //Used in prototype
+$lighter-gray							: #C4C4C4; //Used in prototype
+$off-white								: #f9f9f9; //Used in prototype
+$light-gray								: lighten( $gray, 10%); //Used in prototype
+
+
+// TRANSPARENCY & SHADOW ------------------------------------------------ //
+// ---------------------------------------------------------------------- //
+
+$shadow-dark              : rgba( 0, 0, 0, 0.8 ) !default;
+$shadow-medium            : rgba( 0, 0, 0, 0.5 ) !default;
+$shadow-light             : rgba( 0, 0, 0, 0.2 ) !default;
+$transparent              : transparent !default;
+
+
+
+.color-swatch {
+    width: 100%;
+    float: none;
+    display: block;
+    height: 0;
+    padding-bottom: 25%;
+    position: relative;
+    border: 3px solid rgb(255, 255, 255);
+}
+
+.color-swatch-COLORNAME {
+    background: $purple
+}

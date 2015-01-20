@@ -1,0 +1,28 @@
+// ---------------------------------------------------------------------- //
+// POLYFILL ------------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+// For old variables that have had their naming conventions changed
+// in Roux, polyfill the old var names to the new ones here, so that
+// when we move to RMN consuming Roux, nothing breaks before refactoring.
+
+// COLORS --------------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+$light-purple             : $purple-light;
+$dark-purple              : $purple-dark;
+$darker-purple            : $purple-dark-10;
+$darkest-purple           : $purple-dark-20;
+$darker-blue              : $blue-dark;
+$dark-red                 : $red-dark;
+$darker-green             : $green-dark;
+$lightest-beige           : $off-white;
+$light-beige              : $beige-light;
+$dark-beige               : $star-dust;
+$darker-beige             : $star-dust-dark;
+
+
+// SPACING, GRID -------------------------------------------------------- //
+// ---------------------------------------------------------------------- //
+
+$radius                   : $border-radius-default;
+$spacing                  : $spacing-default;

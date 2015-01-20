@@ -183,7 +183,7 @@ module.exports = function (grunt) {
         fontsDir: '<%= yeoman.app %>/styles/fonts',
         importPath: './bower_components',
         httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated',
+        httpGeneratedImagesPath: '../images/generated',
         httpFontsPath: '/styles/fonts',
         relativeAssets: false,
         assetCacheBuster: false,

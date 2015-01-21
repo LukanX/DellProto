@@ -6,7 +6,7 @@ $coupon-logo-dimension-tablet-portrait-only: 100px;
 	background: white;
 	margin-bottom: 30px;
 	border: solid 1px $beige;
-	@include clearfix;
+	//@include clearfix;
 }
 
 .coupon-square-logo {
@@ -60,9 +60,9 @@ $coupon-logo-dimension-tablet-portrait-only: 100px;
 	@include media($breakpoint-tablet-portrait-only) {
 		margin-left: 40%;
 	}
-	@include media($breakpoint-fwapping) {
-		padding-bottom: 18px;
-	}
+	// @include media($breakpoint-fwapping) {
+	// 	padding-bottom: 18px;
+	// }
 }
 
 .coupon-icon-star {
@@ -70,7 +70,11 @@ $coupon-logo-dimension-tablet-portrait-only: 100px;
 	position: absolute;
 	top: 18px;
 	right: 18px;
-	@include user-select( none );
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 
 	.icon-star {
 		@include sprite-dimensions($view-sprite, Heart_Beige_Outline_Filled_24px);
@@ -85,16 +89,18 @@ $coupon-logo-dimension-tablet-portrait-only: 100px;
 	}
 }
 
+
+
 .coupon-square-cta {
 	white-space: nowrap;
 	width: 130px;
 	float: right;
 	margin-bottom: 18px;
 	padding: 12px 0;
-	@include media($breakpoint-fwapping) {
-		float: none;
-		margin: 0 auto;
-	}
+	// @include media($breakpoint-fwapping) {
+	// 	float: none;
+	// 	margin: 0 auto;
+	// }
 }
 
 .coupon-star-input {
@@ -110,11 +116,11 @@ $coupon-logo-dimension-tablet-portrait-only: 100px;
 	white-space: nowrap;
 	float: left;
 
-	@include media($breakpoint-fwapping) {
-		&.grid-unit {
-			display: none;
-		}
-	}
+	// @include media($breakpoint-fwapping) {
+	// 	&.grid-unit {
+	// 		display: none;
+	// 	}
+	// }
 }
 
 .coupon-square-title {

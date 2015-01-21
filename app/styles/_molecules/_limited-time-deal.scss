@@ -40,12 +40,12 @@
 		color: $black;
 		line-height: 1.2em;
 		@include media($breakpoint-800){
-			padding-top: .5em;
+			padding-top: 1em;
 		}
 	}
 
 	.product-price{
-		padding-top: .5em;
+		padding-top: 1.5em;
 		.old-price{
 			text-decoration: line-through;
 			color: $light-gray;
@@ -55,6 +55,7 @@
 			color: $blue;
 			font-size: $zeta;
 			font-weight: bold;
+			line-height: 1.3em;
 		}
 	}
 }

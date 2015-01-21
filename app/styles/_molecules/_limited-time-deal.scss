@@ -21,31 +21,35 @@
 		background-repeat: no-repeat;
 	}
 	.logo-container{
+		width: 17.5%;
 		@include media($breakpoint-800){
 			width: 12.5%;
 		}
 	}
 	.merchant-name{
-		font-size: $sigma;
+		font-size: $kappa;
+		padding-left: $spacing-default/2;
 		@include media($breakpoint-800){
-			padding-left: $spacing-default/2;
 			font-size: $kappa;
 			vertical-align: middle;
 			line-height: 63px;
+			width: 87.5%;
 		}
-		width: 87.5%;
+		width: 82.5%;
 	}
 	.product-name{
-		font-size: $iota;
+		@include media($breakpoint-800){
+			font-size: $iota;
+		}
+		font-size: $kappa;
 		color: $black;
 		line-height: 1.2em;
-		@include media($breakpoint-800){
-			padding-top: .5em;
-		}
+		padding-top: .5em;
 	}
 
 	.product-price{
-		padding-top: 1.5em;
+		padding-top: .75em;
+		@include media($breakpoint-800){ padding-top: 1.5em; }
 		.old-price{
 			text-decoration: line-through;
 			color: $light-gray;
@@ -53,7 +57,10 @@
 		}
 		.new-price{
 			color: $blue;
-			font-size: $zeta;
+			@include media($breakpoint-800){
+				font-size: $zeta;
+			}
+			font-size: $iota;
 			font-weight: bold;
 			line-height: 1.3em;
 		}

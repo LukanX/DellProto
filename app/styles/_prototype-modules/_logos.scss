@@ -6,11 +6,13 @@
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center center;
-  margin-top: 1em;
-  &.first-row{
-  	margin-top: 0;
-  }
-  @include media($breakpoint-800){
-  	margin-top: 0;
+  &.merchant-showcase{
+    margin-top: 1em;
+    @include media($breakpoint-800){
+      margin-top: 0;
+    }
+    &.first-row{
+      margin-top: 0;
+    }
   }
 }

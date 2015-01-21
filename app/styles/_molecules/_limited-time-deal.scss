@@ -8,6 +8,9 @@
 		margin-bottom: 0;
 		border-bottom: 1px solid $beige;
 	}
+	&:hover .product-arrow-cta{
+		right: 2em;
+	}
 }
 
 .limited-time-deal{
@@ -46,11 +49,21 @@
 		.old-price{
 			text-decoration: line-through;
 			color: $light-gray;
-			font-size: $kappa
+			font-size: $sigma
 		}
 		.new-price{
 			color: $blue;
-			font-size: $iota;
+			font-size: $zeta;
+			font-weight: bold;
 		}
 	}
+}
+
+.product-arrow-cta{
+	position: absolute;
+	bottom: 3em;
+	right: 3em;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
 }

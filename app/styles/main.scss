@@ -365,8 +365,11 @@ html, body{
     float: left;
     width: 80%;
     padding-left: 1em;
+    font-size: $zeta;
     .old-price-coupons{
       line-height: 1em;
+      font-size: $sigma;
+      color: $light-gray;
     }
     @include media($breakpoint-800){
       width: 92%;
@@ -553,7 +556,9 @@ html, body{
 
 
 
-
+.top-align{
+  vertical-align: top;
+}
 
 
 

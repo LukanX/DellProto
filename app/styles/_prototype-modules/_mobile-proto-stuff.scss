@@ -1,0 +1,268 @@
+.mobile-proto{
+
+	.page-container{
+		position: relative;
+		overflow: hidden;
+	}
+	.search-bar, .search-bar-cover{
+		background: #3F2543;
+		height: 64px;
+		padding: 16px;
+		&:before, &:after{
+			content: " ";
+			display: table;
+		}
+		form{
+			width: 100%;
+			max-width: 100%!important;
+			input{
+				border-radius: 4px;
+				height: 32px;
+				display: inline-block;
+				width: 100%;
+				text-align: center;
+				padding: 0 10px;
+			}
+		}
+	}
+	.qf{
+		position: relative;
+		background: #fff;
+		padding: 0;
+		border-radius: 8px;
+		border: none;
+		font-size: 13px;
+		width: 158px;
+		-webkit-box-shadow: 1px 1px 2px #999 inset;
+		box-shadow: 1px 1px 2px #999 inset;
+		input{
+			border: none;
+			color: #636363;
+			font-weight: 400;
+			font-size: 16px;
+			float: left;
+			height: 28px;
+			padding: 1px 0 1px 3px;
+			-webkit-appearance: none;
+			border-radius: 8px;
+		}
+	}
+
+	.carousel{
+		overflow: hidden;
+		position: relative;
+		z-index: 0;
+		width: 100%;
+		.carousel-inner{
+			background: #3E2442;
+			.item{
+				overflow: hidden;
+			}
+			.images{
+				z-index: 1;
+				position: relative;
+				height: 160px;
+				&.no-feature{
+					.store-img-wrap{
+						background-color: #fff;
+						border: 0;
+						border-radius: 0;
+						display: inline-block;
+						height: 144px;
+						line-height: 144px;
+						overflow: hidden;
+						text-align: center;
+						width: 144px;
+						width: 100%;
+						height: 100%;
+						margin: 0;
+						-webkit-animation-name: none;
+						animation-name: none;
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 2;
+						-webkit-animation-fill-mode: both;
+						animation-fill-mode: both;
+						-webkit-animation-duration: 1s;
+						-webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,.3);
+						box-shadow: 0 0 4px 0 rgba(0,0,0,.3);
+						img{
+							-webkit-animation-fill-mode: both;
+							animation-fill-mode: both;
+							-webkit-animation-duration: 1s;
+							animation-duration: 1s;
+							-webkit-animation-name: fadeInRight;
+							animation-name: fadeInRight;
+							position: absolute;
+							top: 0;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							margin: auto;
+							border-radius: 0;
+							background-color: transparent;
+							max-height: 144px;
+							max-width: 144px;
+							padding: 0;
+							vertical-align: middle;
+						}
+					}
+				}
+			}
+			.text{
+				width: 100%;
+				padding: 16px 5%;
+				height: 139px;
+				color: #fff;
+				.store{
+					font-weight: 700;
+					font-size: 12px;
+				}
+				.title{
+					position: relative;
+					overflow: hidden;
+					padding-right: 45px;
+					font-size: 20px;
+					line-height: 1.25;
+					max-height: 50px;
+					margin-top: 14px;
+					margin-bottom: 7px;
+				}
+				.subtext{
+					font-weight: 700;
+					font-size: 12px;
+					padding-right: 20px;
+					min-height: 18px;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					white-space: nowrap;
+				}
+			}
+		}
+	}
+	.carousel-fade{
+		-webkit-transform: translate3d(0,0,0);
+		.carousel-inner .item{
+			opacity: 0;
+			-webkit-transition-property: opacity;
+			transition-property: opacity;
+			&.active{
+				opacity: 1;
+			}
+		}
+	}
+	.carousel-inner{
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		&>.item{
+			display: none;
+			position: relative;
+			-webkit-transition: .6s ease-in-out left;
+			transition: .6s ease-in-out left;
+		}
+		&>.active{
+			display: block;
+			left: 0;
+		}
+	}
+
+	.carousel-nav{
+		height: 48px;
+		background-color: #4B3050;
+		.carousel-control{
+			position: absolute;
+			color: #fff;
+			text-align: center;
+			border: 0 solid #3E2642;
+		}
+		a.carousel-control{
+			width: 80px;
+			line-height: 48px;
+			font-size: 12px;
+			font-weight: 700;
+			color: #fff;
+			&.left{
+				left: 0;
+				border-right-width: 2px;
+				padding-left: 18px;
+				&:before{
+					@include sprite-dimensions($view-sprite, white_arrow_left);
+					background: sprite($view-sprite, white_arrow_left) no-repeat;
+					content: '';
+					position: absolute;
+					top: 18px;
+					left: 17px;
+				}
+			}
+			&.right{
+				border-left-width: 2px;
+				padding-right: 16px;
+				right: 0;
+				&:before{
+					@include sprite-dimensions($view-sprite, white_arrow_right);
+					background: sprite($view-sprite, white_arrow_right) no-repeat;
+					content: '';
+					position: absolute;
+					top: 18px;
+					right: 17px;
+				}
+			}
+		}
+	}
+
+	.carousel-indicators{
+		z-index: 2000;
+		width: 100%;
+		padding-left: 0;
+		list-style: none;
+		text-align: center;
+		line-height: 48px;
+		li{
+			display: inline-block;
+			width: 5px;
+			height: 5px;
+			margin: 0 5px 0;
+			text-indent: -999px;
+			border: 1px solid #FFF;
+			background-color: #FFF;
+			border-radius: 10em;
+			&.active{
+				background-color: #009AF7;
+				border: 1px solid #009AF7;
+			}
+		}
+	}
+	.mobile-container{
+		background: #fff;
+		padding: 0 1em;
+		.limited-time-deal{
+			.product-name{
+				font-size: $sigma;
+			}
+			.product-price{
+				text-align: right;
+				.old-price, .new-price{
+					display: inline-block;
+				}
+				.new-price{
+					font-size: $kappa;
+					padding-left: .5em;
+				}
+			}
+		}
+	}
+}
+
+#inner-content{
+	color: #666;
+	line-height: 1.5em;
+	font-size: .9em;
+	font-weight: 300;
+}
+
+#main{
+	overflow: hidden;
+	margin: 0 auto;
+}

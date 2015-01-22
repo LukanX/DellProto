@@ -472,9 +472,6 @@
 
 
 @include media($breakpoint-800-max){
-  .mobile-hide{
-    display: none;
-  }
 
   .tabs{
     font-size: 12px;

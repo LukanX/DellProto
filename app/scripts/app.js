@@ -31,6 +31,10 @@ angular
         templateUrl: 'views/product.html',
         controller: 'ProductCtrl'
       })
+      .when('/mobile', {
+        templateUrl: 'views/mobile-home.html',
+        controller: 'MainCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

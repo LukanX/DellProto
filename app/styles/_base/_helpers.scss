@@ -54,6 +54,20 @@
 	transition: height 0.35s ease;
 }
 
+// Mobile visuals
+.mobile-hide{
+	display: none;
+	@include media($breakpoint-500){
+		display: block;
+	}
+}
+
+.mobile-show{
+	display: block;
+	@include media($breakpoint-500){
+		display: none;
+	}
+}
 
 // Needed for Beacon Images
 // ==========================================================================

@@ -6,4 +6,6 @@
 // Building up from molecules to organisms encourages creating standalone, portable, reusable components.
 
 @import "_organisms/site-header";
+@import "_organisms/mobile-site-header";
 @import "_organisms/site-footer";
+@import "_organisms/product-page";

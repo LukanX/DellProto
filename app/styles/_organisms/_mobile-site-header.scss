@@ -1,0 +1,64 @@
+header.mobile-site-header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	-webkit-box-shadow: rgba(63,37,70,.7)0 2px 3px,rgba(0,0,0,.1)0 -1px 0 inset;
+	box-shadow: rgba(63,37,70,.7)0 2px 3px,rgba(0,0,0,.1)0 -1px 0 inset;
+	.header{
+		background: #4C2F51;
+		height: 44px;
+		line-height: 44px;
+		text-align: center;
+		overflow: hidden;
+		&:before, &:after{
+			content: " ";
+			display: table;
+		}
+		div{
+			display: inline-block;
+			span{
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+		.hamburger{
+			width: 60px;
+			height: 44px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-right: 1px solid #3F2543;
+			span{
+				@include sprite-dimensions($view-sprite, hamburger);
+				background: sprite($view-sprite, hamburger) no-repeat;
+			}
+		}
+		.logo{
+			border: none;
+			span{
+				@include sprite-dimensions($view-sprite, mobile-logo);
+				background: sprite($view-sprite, mobile-logo) no-repeat;
+			}
+		}
+		.search{
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			user-select: none;
+			width: 60px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			border-left: 1px solid #3F2543;
+			span{
+				@include sprite-dimensions($view-sprite, search);
+				background: sprite($view-sprite, search) no-repeat;
+			}
+		}
+	}
+}
+
+.mobile-heading-bumper{
+	padding-bottom: 44px;
+}

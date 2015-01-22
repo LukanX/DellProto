@@ -1,0 +1,103 @@
+.product-highlights{
+  .button{
+    min-width: 175px;
+    margin-top: .25em;
+  }
+  .merchant-logo-container{
+    float:left;
+    width: 20%;
+    @include media($breakpoint-800){
+      width: 8%;
+    }
+  }
+  .price-calculation{
+    float: left;
+    width: 80%;
+    padding-left: 1em;
+    font-size: $iota;
+    .old-price-coupons{
+      line-height: 1em;
+      font-size: $sigma;
+      color: $light-gray;
+    }
+    @include media($breakpoint-800){
+      width: 92%;
+    }
+  }
+}
+
+.countdown-timer{
+  color: $red;
+  text-align: center;
+  @include media($breakpoint-800){
+    text-align: left;
+  }
+}
+
+.price-compare{
+  padding: 0;
+  margin: 0;
+  li{
+    padding: .5em;
+    border-bottom: 1px solid $beige;
+    width: 100%;
+    &:first-child{
+      border-top: 1px solid $beige;
+    }
+    .merchant-info{
+      width: 70%;
+      float: left;
+      .merchant-logo-container{
+        width: 30%;
+        float: left;
+      }
+      .merchant-coupon-details{
+        width: 70%;
+        float: left;
+        padding-left: 1em;
+        padding-right: 1em;
+        .smaller{
+          line-height: 1.2em;
+        }
+      }
+    }
+    .purchase-price{
+      width: 30%;
+      text-align: right;
+      float: left;
+      text-align: center;
+      .price{
+        width: 100%;
+      }
+      .smaller{
+        padding-bottom: .5em;
+      }
+    }
+    @include media($breakpoint-800){
+      .merchant-info{
+        width: 80%;
+        .merchant-logo-container{
+          width: 10%;
+        }
+        .merchant-coupon-details{
+          width: 90%;
+          padding-left: 1em;
+          padding-top: 1.5em;
+        }
+      }
+      .purchase-price{
+        width: 20%;
+        text-align: right;
+        padding-top: 1.5em;
+        float: left;
+        .smaller{
+          padding-bottom: 0;
+        }
+        .price{
+          width: 60%;
+          float: left;
+        }
+      }
+    }
+  }
+}

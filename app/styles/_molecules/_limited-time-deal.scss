@@ -4,7 +4,8 @@
 	border: 1px solid $beige;
 	.time-limit{
 		color: $red;
-		@include h5;
+		font-size: $sigma;
+		@include media($breakpoint-800){ font-size: $iota; }
 		margin-bottom: 0;
 		border-bottom: 1px solid $beige;
 	}
